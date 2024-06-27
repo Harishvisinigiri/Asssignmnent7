@@ -60,7 +60,7 @@ class LoginRoute extends Component {
 
   render() {
     if (Cookies.get('jwt_token') !== undefined) {
-      return <Redirect to="/" />
+      return <Redirect to='/' />
     }
     return (
       <NxtWatchContext.Consumer>
@@ -80,42 +80,42 @@ class LoginRoute extends Component {
               <LoginCard onSubmit={this.loginCredentialsSubmission}>
                 <LogoImage src={watchLogoImage} alt={watchLogoImageAlt} />
 
-                <Label value={lightTheme} htmlFor="usernameInputField">
+                <Label value={lightTheme} htmlFor='usernameInputField'>
                   USERNAME
                 </Label>
 
                 <InputField
-                  type="text"
-                  id="usernameInputField"
-                  placeholder="Username"
+                  type='text'
+                  id='usernameInputField'
+                  placeholder='Username'
                   onChange={this.takingUsernameInput}
                 />
 
-                <Label value={lightTheme} htmlFor="passwordInputField">
+                <Label value={lightTheme} htmlFor='passwordInputField'>
                   PASSWORD
                 </Label>
 
                 <InputField
                   type={passwordInputType}
-                  id="passwordInputField"
-                  placeholder="Password"
+                  id='passwordInputField'
+                  placeholder='Password'
                   onChange={this.takingPasswordInput}
                 />
 
                 <div>
                   <input
-                    id="showPasswordInputField"
-                    type="checkbox"
+                    id='showPasswordInputField'
+                    type='checkbox'
                     onChange={this.changeShowPasswordStatus}
                   />
                   <ShowPassword
                     value={lightTheme}
-                    htmlFor="showPasswordInputField"
+                    htmlFor='showPasswordInputField'
                   >
                     Show Password
                   </ShowPassword>
                 </div>
-                <LoginButton type="submit">Login</LoginButton>
+                <LoginButton type='submit'>Login</LoginButton>
                 {showErrorMessage && <p>*{errorMessage}</p>}
               </LoginCard>
             </LoginPage>
